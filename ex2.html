@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {};//空のオブジェクト
+        let pen = {
+            color: "red",
+            length: 3,
+        };
+        console.log(pen.color);
+        console.log(pen.length);
+        pen.price = 100;
+        console.log(pen.price);
+        pen.length = 4;
+        //pen.lenght=5; 
+        //エラーにならずに新しいプロパティが追加されてしまう。
+        let hero = {
+            hp: 100,
+            name: "ロト",
+        };
+
+        class Pen {
+            constructor(length) {
+                this.length = length;
+                this.color = "red";
+            }
+            write() {
+                this.length -= 0.5;
+                return "書きました";
+            }
+        }
+        const p1 = new Pen(10);
+        console.log(p1.write());
+        console.log(p1.length);
+
+        const p2 = new Pen();
+        console.log(p2.length);
+        //→undefined表示
+        console.log(p2);
+
+        const p3 = new Pen(2, 4);
+        console.log(p3.color);
+        //→red表示
+        console.log(p3);
+
+    </script>
+
+</body>
+
+</html>
